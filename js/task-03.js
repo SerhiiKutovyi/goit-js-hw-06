@@ -13,11 +13,29 @@ const images = [
   },
 ];
 
-const newImages = document.querySelector('.gallery');
-console.log(newImages);
+const newImagesEl = document.querySelector('.gallery');
+console.log(newImagesEl);
 
 const newImg = images
   .map(image => `<li> <img src=${image.url} alt=${image.alt} width='320' height='250' /> </li>`)
   .join('');
 console.log(newImg);
-newImages.insertAdjacentHTML('afterbegin', newImg);
+
+newImagesEl.insertAdjacentHTML('afterbegin', newImg);
+
+// const newImg = images.map(image => {
+//   // console.log(image);
+//   const tempImg = document.createElement('img');
+
+//   tempImg.src = image.url;
+//   tempImg.alt = image.alt;
+//   // console.log(tempImg);
+//   const liEl = document.createElement('li');
+
+//   liEl.appendChild(tempImg);
+//   console.log(liEl);
+//   return liEl;
+// });
+// console.log(newImg.join(''));
+// newImagesEl.appendChild(...newImg);
+// newImagesEl.insertAdjacentHTML('afterbegin', newImg);
